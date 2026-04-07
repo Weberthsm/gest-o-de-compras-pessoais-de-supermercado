@@ -1,0 +1,45 @@
+
+Ideia: um software de gestão de compras pessoais de supermercado onde posso cadastrar e verificar quais produtos devo comprar para repor minha despensa 
+
+
+
+
+Funcionalidades:
+
+
+
+1 - Cadastro de produtos 
+2 - listar produtos
+3 - identificar produtos com baixo estoque 
+
+
+
+1) Objetivo
+Crie uma user story para cada funcionalidade do meu Software de gestão de compras pessoais de supermercado
+
+
+2) Contexto
+- Uma História de Usuário é a prática ágil mais utilizada para capturar necessidades e requisitos e descrever os Itens do Backlog do Produto. É ótimo usar o modelo de História de Usuário: Como <um usuário>, eu quero <funcionalidade>, para que <problema a ser resolvido, necessidade> + Regras de negócio.
+- A seguir estão as funcionalidades que farão parte do meu software: 1) Cadastro de produtos 2) listar produtos 3) identificar produtos com baixo estoque 
+
+3) Regras
+- Gere apenas as user stories e implemente regras de negócio para cada uma das user stories
+
+4) Exemplo
+Funcionalidade: Cadastro de produtos
+
+Como usuário
+Quero cadastrar produtos 
+Para garantir minha dispensa não falte produtos e eu saiba antecipadamente o que está por acabar
+
+
+
+5) Formato
+Lista de User Stories.
+
+
+
+
+
+
+

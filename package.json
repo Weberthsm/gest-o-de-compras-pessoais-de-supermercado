@@ -1,0 +1,19 @@
+{
+  "name": "gestao-compras-supermercado",
+  "version": "1.0.0",
+  "description": "API para gestão de compras pessoais de supermercado",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-ui-express": "^5.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "uuid": "^9.0.1"
+  },
+  "keywords": ["api", "supermercado", "compras"],
+  "author": "",
+  "license": "ISC"
+}
