@@ -34,6 +34,10 @@ class ProductService {
   getProductById(id) {
     return this.products.find(p => p.id === id);
   }
+
+  clearProducts() {
+    this.products = [];
+  }
 }
 
 module.exports = new ProductService(); // singleton for in-memory
