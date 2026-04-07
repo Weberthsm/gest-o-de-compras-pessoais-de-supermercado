@@ -1,10 +1,10 @@
 
 1. Objetivo
-- Implementar a automação de testes de API REST usando como base o Swagger e as Condições de Teste da user story 2. Cadastro de reservas
+- Implementar a automação de testes de API REST usando como base o Swagger e as Condições de Teste da user story 1. Cadastro de produtos
 
 2. Contexto
 - Swagger está descrito no arquivo "swagger.json"
-- As condições de teste estão descritas no arquivo "4 - Resultado do prompt - filtro para usar apenas condições referente api .txt"
+- As condições de teste estão descritas no arquivo "3 - Condições de Teste.txt"
 - A API está rodando no servidor "http://localhost:3000"
 
 3. Regras
