@@ -1,0 +1,10 @@
+# Condições de Teste - User Story 1: Cadastro de produtos
+
+| ID | Condição | Resultado Esperado |
+| --- | --- | --- |
+| CT-01 | Cadastro de produto com dados válidos | O produto é criado com sucesso e a resposta contém os campos esperados |
+| CT-02 | Cadastro de produto com nome já existente | O sistema rejeita o cadastro e retorna erro de validação de nome duplicado |
+| CT-03 | Cadastro de produto com quantidade inicial negativa | O sistema rejeita o cadastro e retorna erro de validação de quantidade |
+| CT-04 | Cadastro de produto sem quantidade mínima informada | Deve exigir um valor inteiro positivo para o produto ser criado com sucesso |
+| CT-05 | Registro de data de criação no produto cadastrado | O produto possui data de criação válida registrada no momento do cadastro |
+| CT-06 | Persistência em memória após cadastro do produto | O produto permanece disponível para consulta após cadastro bem-sucedido |
