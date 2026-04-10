@@ -134,4 +134,11 @@ router.get('/', productController.getAllProducts);
  */
 router.get('/:id', productController.getProductById);
 
+// DELETE /products - Clear all products (for testing)
+router.delete('/', (req, res) => {
+  const productService = require('../services/ProductService');
+  productService.clearProducts();
+  res.status(200).json({ message: 'Produtos limpos' });
+});
+
 module.exports = router;
