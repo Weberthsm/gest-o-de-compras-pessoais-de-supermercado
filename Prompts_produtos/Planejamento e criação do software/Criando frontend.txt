@@ -1,0 +1,15 @@
+Objetivo
+Criar uma Aplicação Web para gestão de compras pessoais de supermercado.
+
+Contexto
+A aplicação Web será baseada na API gestão de compras pessoais de supermercado que está definida no Swagger file armazenado em resources/swagger.json
+A API estará rodando em http://localhost:3000/
+
+Regras
+Apenas execute o que eu te pedir, não me pergunte nada.
+Crie essa aplicação Web usando o framework express do Javascript
+Utilize HTML e CSS para o frontend, use o framework Bulma para estilização.
+Faça a aplicação web rodar na porta 4000.
+Configure mensagens de erro para quando a API retornar falhas (fora da faixa de status code 200)
+Use as melhores práticas de ui/ux
+Defina uma arquiterura escalável

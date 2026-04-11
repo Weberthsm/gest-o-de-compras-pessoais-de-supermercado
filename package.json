@@ -5,6 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
+    "start:web": "node webapp/server.js",
     "dev": "node src/server.js",
     "test": "mocha --recursive",
     "test:report": "mocha --recursive --reporter mochawesome --reporter-options reportDir=test-results,reportFilename=index"

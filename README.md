@@ -37,14 +37,28 @@ resources/
    npm install
    ```
 
-2. Execute o servidor:
+### Iniciar a API
+
+1. Execute o servidor da API:
    ```
    npm start
    ```
 
-3. A API estará disponível em `http://localhost:3000`
+2. A API estará disponível em `http://localhost:3000`
 
-4. Documentação Swagger: `http://localhost:3000/api-docs`
+3. Documentação Swagger:
+   `http://localhost:3000/api-docs`
+
+### Iniciar a aplicação web
+
+1. Abra outra janela de terminal e execute:
+   ```
+   npm run start:web
+   ```
+
+2. A aplicação web estará disponível em `http://localhost:4000`
+
+3. A aplicação web consome a API em `http://localhost:3000`
 
 ## Endpoints
 
