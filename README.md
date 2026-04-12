@@ -6,6 +6,7 @@ Este projeto é uma API REST para gestão de compras pessoais de supermercado, d
 
 ### User Story 1: Cadastro de Produtos
 
+
 Como usuário
 Quero cadastrar produtos
 Para controlar os itens da minha despensa e saber o que preciso repor
@@ -17,6 +18,9 @@ Deve permitir definir uma quantidade mínima (estoque mínimo) para alerta
 Não permitir cadastro de produtos com nome duplicado
 A quantidade inicial não pode ser menor que 0
 O sistema deve registrar data de criação do produto
+
+- Cadastrar produtos com nome, quantidade atual e quantidade mínima para alerta.
+- Validações: nome único, quantidade >= 0, data de criação registrada.
 
 ### User Story 2: Listar produtos
 Funcionalidade: Listar produtos
@@ -44,7 +48,7 @@ Um produto é considerado com baixo estoque quando a quantidade atual for menor 
 O sistema deve destacar visualmente os produtos com baixo estoque
 Deve permitir filtrar apenas produtos com baixo estoque
 A verificação deve ocorrer automaticamente sempre que houver alteração de quantidade
-Caso nenhum produto esteja com baixo estoque deve ser classificado como Estável
+Caso o produto esteja com baixo estoque deve ser classificado como Repor e classificado como Estável quando em níveis normais
 
 
 ## Tecnologias Utilizadas
