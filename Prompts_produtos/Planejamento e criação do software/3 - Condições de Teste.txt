@@ -8,3 +8,23 @@
 | CT-04 | Cadastro de produto sem quantidade mínima informada | Deve exigir um valor inteiro positivo para o produto ser criado com sucesso |
 | CT-05 | Registro de data de criação no produto cadastrado | O produto possui data de criação válida registrada no momento do cadastro |
 | CT-06 | Persistência em memória após cadastro do produto | O produto permanece disponível para consulta após cadastro bem-sucedido |
+
+# Condições de Teste - User Story 2: Listar produtos
+
+| ID | Condição | Resultado Esperado |
+| --- | --- | --- |
+| CT-07 | Exibir lista de produtos cadastrados | Retorna a lista completa de produtos cadastrados |
+| CT-08 | Apresentar nome, quantidade atual e estoque mínimo na listagem | A listagem contém os campos obrigatórios definidos nas regras de negócio |
+| CT-09 | Ordenar produtos por nome ou por quantidade | A listagem permite ordenação conforme os critérios definidos |
+| CT-10 | Filtrar produtos com e sem estoque | A listagem permite separar produtos em estoque e fora de estoque |
+| CT-11 | Atualizar a listagem após alteração | As alterações em produtos são refletidas na listagem imediatamente |
+
+# Condições de Teste - User Story 3: Identificar produtos com baixo estoque
+
+| ID | Condição | Resultado Esperado |
+| --- | --- | --- |
+| CT-12 | Identificar produtos com baixo estoque | Produtos com quantidade atual menor ou igual ao estoque mínimo são classificados como baixo estoque |
+| CT-13 | Destacar visualmente produtos com baixo estoque | Produtos de baixo estoque aparecem com destaque na interface ou resposta |
+| CT-14 | Filtrar apenas produtos com baixo estoque | A funcionalidade permite exibir somente os produtos em baixo estoque |
+| CT-15 | Verificação automática de baixo estoque após alteração | A identificação de baixo estoque ocorre sempre que a quantidade do produto é alterada |
+| CT-16 | Classificar como Estável quando não há baixo estoque | Quando não há produtos com baixo estoque, a listagem indica estado estável |
