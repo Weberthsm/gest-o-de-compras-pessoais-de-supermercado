@@ -18,11 +18,15 @@ Regras
 - Escreva apenas os testes automatizados que cobrirão os casos de teste das user stories
 - Gere relatório de execução de testes em HTML
 - Crie uma estrutura escalável e bem organizada utilizando padrão de projeto actions fixtures no playwright
+- crie a conexão de maneira que eu possa só trocar a URL e mudar de um ambiente de dev, homologação ou produção.
 
 Passo a Passo da Execução:
-1. Leia as user stories e seus respectivos critérios de aceite que estão no README.md
+1. Leia as user stories e respectivos critérios de aceite que estão no README.md
 2. Leia as condições de teste do arquivo "3 - Condições de Teste.txt"
-3. Identifique se precisamos instalar as bibliotecas para construção dos testes automatizados Web
-4. Converta as condições de teste em casos de teste e grave no arquivo "8 - casos de teste.txt", sempre identificando a que user story e condição de teste o caso de teste se refere.
-5. Use os casos de teste do arquivo "8 - casos de teste.txt", que você criou, para então gerar os testes automatizados Web
-6. Execute os testes automatizados Web para verificar se foram escritos como deveriam
+3. Leia o swagger.json que está em ./resources/ para obter mais informações
+4. Leia o arquivo .env para informações de conexão das aplicações web e api
+5. Identifique se precisamos instalar as bibliotecas para construção dos testes automatizados Web
+6. Converta as condições de teste em casos de teste e grave no arquivo "8 - casos de teste.txt", sempre identificando a que user story e condição de teste o caso de teste se refere.
+7. Certifique que leu todos os arquivos e pastas indicados, incluindo o "8 - casos de teste.txt"
+8. Use os casos de teste do arquivo "8 - casos de teste.txt", que você criou, para então gerar os testes automatizados Web
+9. Execute os testes automatizados Web para verificar se foram escritos como deveriam
