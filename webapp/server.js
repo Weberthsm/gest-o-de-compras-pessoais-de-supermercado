@@ -1,11 +1,16 @@
 const express = require('express');
 const path = require('path');
-const { APP_PORT } = require('./config');
+const { APP_PORT, API_BASE_URL } = require('./config');
 
 const app = express();
 const publicFolder = path.join(__dirname, 'public');
 
 app.use(express.static(publicFolder));
+
+app.get('/app-config.js', (req, res) => {
+  res.type('application/javascript');
+  res.send(`window.APP_CONFIG = ${JSON.stringify({ API_BASE_URL })};`);
+});
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(publicFolder, 'index.html'));

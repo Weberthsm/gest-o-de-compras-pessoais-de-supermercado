@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
@@ -10,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
+  res.setHeader('Access-Control-Allow-Origin', process.env.WEBAPP_ORIGIN || process.env.BASE_URL_WEB || 'http://localhost:4000');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') {

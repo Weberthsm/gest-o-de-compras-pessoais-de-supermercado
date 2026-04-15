@@ -28,5 +28,5 @@ Passo a Passo da Execução:
 5. Identifique se precisamos instalar as bibliotecas para construção dos testes automatizados Web
 6. Converta as condições de teste em casos de teste e grave no arquivo "8 - casos de teste.txt", sempre identificando a que user story e condição de teste o caso de teste se refere.
 7. Certifique que leu todos os arquivos e pastas indicados, incluindo o "8 - casos de teste.txt"
-8. Use os casos de teste do arquivo "8 - casos de teste.txt", que você criou, para então gerar os testes automatizados Web
+8. Use os casos de teste do arquivo "8 - casos de teste.txt", que você criou, para então gerar os testes automatizados Web usando como modelo o padrão de projeto actions fixtures playwright que foi implementado no projeto "C:\Projetos\Turma3\velo"  
 9. Execute os testes automatizados Web para verificar se foram escritos como deveriam

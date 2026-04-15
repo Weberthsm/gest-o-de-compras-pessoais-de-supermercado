@@ -8,22 +8,30 @@
     "start:web": "node webapp/server.js",
     "dev": "node src/server.js",
     "test": "mocha --recursive",
-    "test:report": "mocha --recursive --reporter mochawesome --reporter-options reportDir=test-results,reportFilename=index"
+    "test:report": "mocha --recursive --reporter mochawesome --reporter-options reportDir=test-results,reportFilename=index",
+    "test:web": "playwright test",
+    "test:web:headed": "playwright test --headed",
+    "test:web:report": "playwright show-report playwright-report"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "swagger-ui-express": "^5.0.0",
     "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "chai": "^4.3.7",
     "dotenv": "^16.0.3",
     "mocha": "^10.2.0",
     "mochawesome": "^7.1.3",
     "supertest": "^6.3.3"
   },
-  "keywords": ["api", "supermercado", "compras"],
+  "keywords": [
+    "api",
+    "supermercado",
+    "compras"
+  ],
   "author": "",
   "license": "ISC"
 }
