@@ -57,6 +57,14 @@ Caso o produto esteja com baixo estoque deve ser classificado como Repor e class
 - Swagger para documentação da API
 - Banco de dados em memória
 
+## Stack Utilizada
+- Backend: Node.js, Express.js
+- APIs e documentações: Swagger (swagger-jsdoc, swagger-ui-express)
+- Testes da API: Mocha, Chai, Supertest
+- Testes Web: Playwright
+- Frontend: HTML, CSS, JavaScript
+- Banco de dados: memória em tempo de execução
+
 ## Estrutura do Projeto
 ```
 src/
@@ -102,6 +110,29 @@ resources/
 2. A aplicação web estará disponível em `http://localhost:4000`
 
 3. A aplicação web consome a API em `http://localhost:3000`
+
+### Executar testes
+
+- Testes da API:
+  ```
+  npm test
+  ```
+- Testes da API com relatório:
+  ```
+  npm run test:report
+  ```
+- Testes Web com Playwright(modo Headless: navegador fechado
+  ```
+  npm run test:web
+  ```
+- Testes Web no modo visível (navegador aberto):
+  ```
+  npm run test:web:headed
+  ```
+- Abrir relatório do Playwright:
+  ```
+  npm run test:web:report
+  ```
 
 ## Endpoints
 
