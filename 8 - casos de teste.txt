@@ -1,0 +1,35 @@
+# Casos de Teste Web - Gestão de Compras Pessoais de Supermercado
+
+## User Story 1: Cadastro de Produtos
+
+| ID Caso | Ref. User Story | Ref. Condição | Caso de teste | Resultado esperado | Automatização Web Atual |
+| --- | --- | --- | --- | --- | --- |
+| CTC-01 | US-01 | CT-01 | Cadastrar produto com nome, quantidade atual e quantidade mínima válidos | Produto exibido na listagem com mensagem de sucesso | Sim |
+| CTC-02 | US-01 | CT-02 | Tentar cadastrar um produto com nome já existente | Sistema exibe erro de nome duplicado e não cria novo registro | Sim |
+| CTC-03 | US-01 | CT-03 | Tentar cadastrar produto com quantidade inicial negativa | Sistema rejeita o cadastro com mensagem de validação | Sim |
+| CTC-04 | US-01 | CT-04 | Cadastrar produto sem alterar a quantidade mínima padrão | Produto é criado com quantidade mínima padrão apresentada na listagem | Sim |
+| CTC-05 | US-01 | CT-05 | Validar exibição da data de criação após cadastro | Produto é listado com data de criação preenchida em formato legível | Sim |
+| CTC-06 | US-01 | CT-06 | Recarregar a página após cadastrar um produto | Produto continua disponível na listagem após o recarregamento | Sim |
+
+## User Story 2: Listar Produtos
+
+| ID Caso | Ref. User Story | Ref. Condição | Caso de teste | Resultado esperado | Automatização Web Atual |
+| --- | --- | --- | --- | --- | --- |
+| CTC-07 | US-02 | CT-07 | Exibir produtos previamente cadastrados ao abrir a aplicação | Lista apresenta os produtos cadastrados | Sim |
+| CTC-08 | US-02 | CT-08 | Validar as colunas exibidas na tabela de listagem | Listagem exibe nome, quantidade atual, quantidade mínima, status e data de criação | Sim |
+| CTC-09 | US-02 | CT-09 | Ordenar produtos por nome | Produtos são reordenados alfabeticamente por nome | Não |
+| CTC-10 | US-02 | CT-09 | Ordenar produtos por quantidade | Produtos são reordenados por quantidade | Não |
+| CTC-11 | US-02 | CT-10 | Filtrar apenas produtos com estoque disponível | Apenas produtos com quantidade maior que zero são exibidos | Não |
+| CTC-12 | US-02 | CT-10 | Filtrar apenas produtos sem estoque | Apenas produtos com quantidade igual a zero são exibidos | Não |
+| CTC-13 | US-02 | CT-11 | Atualizar a listagem após um novo cadastro sem recarregar a página | Novo produto aparece na listagem logo após o cadastro | Sim |
+
+## User Story 3: Identificar Produtos com Baixo Estoque
+
+| ID Caso | Ref. User Story | Ref. Condição | Caso de teste | Resultado esperado | Automatização Web Atual |
+| --- | --- | --- | --- | --- | --- |
+| CTC-14 | US-03 | CT-12 | Cadastrar produto com quantidade atual menor que a quantidade mínima | Produto é classificado como Repor | Sim |
+| CTC-15 | US-03 | CT-12 | Cadastrar produto com quantidade atual igual à quantidade mínima | Produto é classificado como Repor | Sim |
+| CTC-16 | US-03 | CT-13 | Validar destaque visual de produto com baixo estoque | Produto de baixo estoque é exibido com estilo visual de alerta | Sim |
+| CTC-17 | US-03 | CT-14 | Filtrar somente produtos com baixo estoque | Apenas produtos em condição de reposição são exibidos | Não |
+| CTC-18 | US-03 | CT-15 | Alterar a quantidade de um produto para entrar em baixo estoque | Classificação muda automaticamente para Repor após a alteração | Não |
+| CTC-19 | US-03 | CT-16 | Cadastrar produto com quantidade acima da mínima | Produto é classificado como Estável | Sim |
