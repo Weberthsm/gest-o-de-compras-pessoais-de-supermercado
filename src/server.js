@@ -1,15 +1,15 @@
 require('dotenv').config();
 
-const express = require('express');
-const swaggerUi = require('swagger-ui-express');
-const swaggerJsdoc = require('swagger-jsdoc');
-const productRoutes = require('./routes/productRoutes');
+import express, { json } from 'express';
+import { serve, setup } from 'swagger-ui-express';
+import swaggerJsdoc from 'swagger-jsdoc';
+import productRoutes from './routes/productRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.json());
+app.use(json());
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', process.env.WEBAPP_ORIGIN || process.env.BASE_URL_WEB || 'http://localhost:4000');
@@ -47,7 +47,7 @@ const options = {
 const swaggerSpec = swaggerJsdoc(options);
 
 // Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', serve, setup(swaggerSpec));
 
 // Routes
 app.use('/products', productRoutes);
@@ -58,10 +58,12 @@ app.get('/swagger.json', (req, res) => {
   res.send(swaggerSpec);
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-  console.log(`Documentação Swagger disponível em http://localhost:${PORT}/api-docs`);
-});
+// Start server when this file is executed directly.
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Documentação Swagger disponível em http://localhost:${PORT}/api-docs`);
+  });
+}
 
-module.exports = app;
+export default app;
