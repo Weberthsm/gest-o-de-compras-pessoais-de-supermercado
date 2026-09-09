@@ -90,6 +90,16 @@ describe('Produtos', () => {
             expect(resposta.body[0].quantity).to.be.a('number')
             expect(resposta.body[0].minQuantity).to.be.a('number')
         })
+
+        it('Deve retornar 200 e um array vazio', async () => {
+            const resposta = await request(app)
+                .get('/products')
+                .set('Content-Type', 'application/json')
+
+            expect(resposta.status).to.equal(200)
+            expect(resposta.body).to.be.an('array')
+            expect(resposta.body).to.be.empty
+        })
     }) 
 
     describe('GET /products/{id}', () => {
@@ -106,6 +116,17 @@ describe('Produtos', () => {
             expect(resposta.body.name).to.be.a('string')
             expect(resposta.body.quantity).to.be.a('number')
             expect(resposta.body.minQuantity).to.be.a('number')
+        })
+
+        it('Deve retornar 404 ao buscar produto por id invalido', async () => {
+            const uuidInexistente = '00000000-0000-0000-0000-000000000000';
+
+            const resposta = await request(app)
+                .get(`/products/${uuidInexistente}`)
+
+            expect(resposta.status).to.equal(404)
+            expect(resposta.body.error).to.be.a('string')
+            expect(resposta.body.error).to.equal('Produto não encontrado')
         })
     }) 
 })
