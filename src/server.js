@@ -1,15 +1,16 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+const express = require('express');
+const { serve, setup } = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
+const productRoutes = require('./routes/productRoutes');
 
-import express, { json } from 'express';
-import { serve, setup } from 'swagger-ui-express';
-import swaggerJsdoc from 'swagger-jsdoc';
-import productRoutes from './routes/productRoutes';
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(json());
+app.use(express.json());
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', process.env.WEBAPP_ORIGIN || process.env.BASE_URL_WEB || 'http://localhost:4000');
@@ -66,4 +67,4 @@ if (require.main === module) {
   });
 }
 
-export default app;
+module.exports = { default: app };

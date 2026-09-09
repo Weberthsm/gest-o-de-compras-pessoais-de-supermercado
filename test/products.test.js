@@ -37,6 +37,14 @@ describe('Produtos', () => {
             expect(resposta.body.error).to.be.a('string')
         });
 
+        it('Deve retornar 400 ao cadastrar produto com quantidade minima menor que zero', async () => {
+            const resposta = await cadastrarProdutoValido({ minQuantity: -1 });
+
+            expect(resposta.status).to.equal(400);
+            expect(resposta.body.error).to.be.a('string')
+            expect(resposta.body.error).to.equal('Quantidade mínima não pode ser menor que 0')
+        });
+
         it('Deve retornar 400 ao cadastrar produto com quantidade inicial menor que zero', async () => {
             const resposta = await cadastrarProdutoValido({ quantity: -1 });
 
