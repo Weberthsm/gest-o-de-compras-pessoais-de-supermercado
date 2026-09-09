@@ -1,9 +1,10 @@
-require('dotenv').config();
-
+const dotenv = require('dotenv');
 const express = require('express');
-const swaggerUi = require('swagger-ui-express');
+const { serve, setup } = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const productRoutes = require('./routes/productRoutes');
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -47,7 +48,7 @@ const options = {
 const swaggerSpec = swaggerJsdoc(options);
 
 // Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', serve, setup(swaggerSpec));
 
 // Routes
 app.use('/products', productRoutes);
@@ -58,10 +59,12 @@ app.get('/swagger.json', (req, res) => {
   res.send(swaggerSpec);
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-  console.log(`Documentação Swagger disponível em http://localhost:${PORT}/api-docs`);
-});
+// Start server when this file is executed directly.
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Documentação Swagger disponível em http://localhost:${PORT}/api-docs`);
+  });
+}
 
-module.exports = app;
+module.exports = { default: app };
